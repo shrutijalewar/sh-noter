@@ -1,7 +1,8 @@
+(function(){
+  'use strict';
 angular.module('starter', ['ionic', 'starter.services'])
 
 .run(function($ionicPlatform){
-'use strict';
   $ionicPlatform.ready(function(){
     if(window.cordova && window.cordova.plugins.Keyboard){
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -12,10 +13,9 @@ angular.module('starter', ['ionic', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider){
-'use strict';
+.config(function($stateProvider, $urlRouterProvider, $httpProvider){
+      $httpProvider.defaults.withCredentials = true;
   $stateProvider
-
     .state('tab',{
       url: '/tab',
       abstract: true,
@@ -60,3 +60,4 @@ angular.module('starter', ['ionic', 'starter.services'])
     });
   $urlRouterProvider.otherwise('/tab/dash');
 });
+})();

@@ -1,4 +1,7 @@
 ion-view(title='Dashboard')
   ion-content.padding
     h1 Dash
-  
+    h3 {{rootuser.username}}
+    img(ng-src='{{rootuser.avatar}}')
+    p Notes: {{count}}
+    button.button.button-positive(ng-click='logout()') Logout
