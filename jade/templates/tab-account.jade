@@ -1,0 +1,10 @@
+ion-view(title='Account')
+  ion-content.padding
+    h1 Account Login
+    .list
+      label.item.item-input
+        input(type='text', placeholder='username', ng-model ='user.username')
+      label.item.item-input
+        input(type='password', placeholder='password', ng-model = 'user.password')
+      button.button.button-positive.button-block(ng-click='login(user)') Login
+            
