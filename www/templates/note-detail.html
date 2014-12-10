@@ -1,0 +1,11 @@
+
+<ion-view title="{{note.title}}">
+  <ion-content has-header="true" padding="true">
+    <button ng-click="snap()" class="button button-positive">Add Photo</button>
+    <button ng-click="choose()" class="button button-positive">Choose Photo</button>
+    <div class="list card"><span>Tags: </span><span ng-repeat="tag in note.tags">{{tag}}&nbsp;</span>
+      <h5>{{note.body}}</h5>
+      <div ng-repeat="photo in note.photos" class="item item-thumbnail"><img ng-src="{{photo}}"></div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -3,7 +3,7 @@
 
   angular.module('starter')
 
-  .value('origin', 'https://orvijmciyu.localtunnel.me');
+  .value('origin', 'https://enigmatic-taiga-6347.herokuapp.com');
 
 
 })();

@@ -1,0 +1,12 @@
+ion-view(title='{{note.title}}')
+  ion-content(has-header='true', padding='true')
+    button.button.button-positive(ng-click='snap()') Add Photo
+    button.button.button-positive(ng-click='choose()') Choose Photo
+    .list.card
+      span Tags: 
+      span(ng-repeat='tag in note.tags') {{tag}}&nbsp;
+      h5 {{note.body}}
+      .item.item-thumbnail(ng-repeat='photo in note.photos')
+        img(ng-src='{{photo}}')
+      
+      
