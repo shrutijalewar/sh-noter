@@ -17,6 +17,10 @@
       return $http.get(origin + '/notes/'+ id);
     }
 
-    return{all:all, findOne:findOne};
+    function upload(noteId, b64){
+      return $http.post(origin + '/mobileupload', {noteId:noteId, b64:b64});
+    }
+
+    return{all:all, findOne:findOne, upload:upload};
   }]);
 })();

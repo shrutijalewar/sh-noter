@@ -10,8 +10,14 @@
       console.log(response.data);
       $scope.note = response.data;
     });
+
     function success(b64){
       console.log(b64);
+      Note.upload($stateParams.noteId, b64).then(function(response){
+        console.log('image uploaded successfully');
+        }, function(response){
+            console.log('Error During Upload');
+        });
     }
 
     function error(msg){
@@ -21,7 +27,7 @@
     $scope.snap = function(){
       console.log('takephoto');
       var options = {
-        quality: 75,
+        quality: 40,
         destinationType: Camera.DestinationType.DATA_URL
       };
       navigator.camera.getPicture(success, error, options);
